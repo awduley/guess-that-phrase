@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  height: 100%; }
+
+body {
+  background: radial-gradient(#5eff5e, #003b00);
+  overflow: hidden;
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif; }
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+  visibility: visible;
+  z-index: 5; }
+  .overlay h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #f3d007;
+    text-align: center;
+    font-family: 'Gayathri', sans-serif; }
+  .overlay.overlay-start.hide-start {
+    visibility: hidden; }
+  .overlay .game-name {
+    cursor: default; }
+  .overlay #get-name {
+    cursor: default; }
+    .overlay #get-name h3 {
+      text-align: center;
+      color: #fff; }
+    .overlay #get-name .name {
+      text-align: center;
+      display: block;
+      margin: 10px auto;
+      padding: 4px 6px;
+      font-size: 1.2rem; }
+    .overlay #get-name .name-btn {
+      display: block;
+      text-align: center;
+      width: 80px;
+      height: auto;
+      margin: 0 auto;
+      padding: 6px 8px;
+      color: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      transition: all 400ms ease; }
+      .overlay #get-name .name-btn.show {
+        background: #ffa600;
+        color: black;
+        border: 1px solid black; }
+  .overlay .player-name-confirm h3 {
+    margin: 10px;
+    font-size: 1.4rem;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    transform: scale(0);
+    transition: all 1s ease; }
+    .overlay .player-name-confirm h3.player-name-confirm {
+      transform: scale(1); }
+    .overlay .player-name-confirm h3.hide-start {
+      visibility: hidden; }
+  .overlay .player-name-confirm h4 {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #f3d007;
+    transform: scale(0);
+    background: #ffa600;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 140px;
+    height: auto;
+    margin: 0 auto;
+    padding: 4px 0;
+    box-shadow: 0 4px 6px #000;
+    cursor: pointer;
+    transition: all 1s ease; }
+    .overlay .player-name-confirm h4.play {
+      transform: scale(1); }
+    .overlay .player-name-confirm h4.hide-start {
+      visibility: hidden; }
+
+#game-container .phrase {
+  width: 100%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  display: block;
+  width: 90%;
+  margin: 20px auto;
+  border: 3px dashed yellow; }
+  #game-container .phrase h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; }
+
+#game-container .spinner-container {
+  margin: 40px 0;
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #game-container .spinner-container .spinner {
+    width: 400px;
+    height: 200px;
+    background: #c4c4c4;
+    border: 6px solid blue;
+    border-radius: 10px; }
+  #game-container .spinner-container .spin-btn {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin: 20px;
+    transform: scale(1);
+    transition: all 400ms ease; }
+    #game-container .spinner-container .spin-btn.start-spin {
+      background: #0b1a5c; }
+      #game-container .spinner-container .spin-btn.start-spin:hover {
+        transform: scale(1);
+        transition: all 400ms ease;
+        background: #ffd700; }
+    #game-container .spinner-container .spin-btn.stop-spin {
+      background: red; }
+      #game-container .spinner-container .spin-btn.stop-spin:hover {
+        transform: scale(1);
+        transition: all 400ms ease;
+        background: #ffd700; }
+
+#game-container .player-info {
+  font-size: 1.8rem;
+  color: silver;
+  text-shadow: 4px 4px 8px #000; }
+  #game-container .player-info .players-name span {
+    color: #ff8c9f; }
+  #game-container .player-info .earnings span {
+    color: #ffd700; }

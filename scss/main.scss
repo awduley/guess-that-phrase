@@ -1,0 +1,231 @@
+@import 'config';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+html { 
+  height: 100%;     
+}
+
+body { 
+  background: $main-game-background;
+  overflow: hidden; 
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $overlay-color; 
+  height: 100%;
+  font-family: $start-font;
+  visibility: visible;
+  z-index: 5;
+
+  h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: $start-color;
+    text-align: center;
+    font-family: 'Gayathri', sans-serif;
+  }
+
+  &.overlay-start {
+    
+    &.hide-start {
+      visibility: hidden;
+    }
+  } 
+
+  .game-name { 
+    cursor: default; 
+  }
+
+  #get-name {
+    cursor: default;
+    h3 {
+      text-align: center;
+      color: #fff; 
+    }
+
+    .name {
+      text-align: center;
+      display: block;
+      margin: 10px auto;
+      padding: 4px 6px;
+      font-size: 1.2rem;
+    }
+
+    .name-btn {
+      display: block;
+      text-align: center;
+      width: 80px;
+      height: auto;
+      margin: 0 auto;
+      padding: 6px 8px;
+      color: rgba(0, 0, 0, .2);
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid rgba(0, 0, 0, .2);
+      @include transition;
+
+      &.show {
+        background:rgb(255, 166, 0);
+        color: rgb(0, 0, 0);
+        border: 1px solid rgb(0, 0, 0);
+      }
+    }
+  }
+
+  .player-name-confirm {
+
+    h3 {
+      margin: 10px;
+      font-size: 1.4rem;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      transform: scale(0);
+      @include transition-slow;
+      
+
+      &.player-name-confirm {
+        transform: scale(1);
+      }
+
+      &.hide-start {
+        visibility: hidden;
+      }
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      text-align: center;
+      color: $start-color;
+      transform: scale(0);
+      background:rgb(255, 166, 0);
+      color: rgb(0, 0, 0);
+      border: 1px solid rgb(0, 0, 0);
+      border-radius: 4px;
+      width: 140px;
+      height: auto;
+      margin: 0 auto;
+      padding: 4px 0;
+      box-shadow: 0 4px 6px #000;
+      cursor: pointer;
+      @include transition-slow;
+
+      &.play {
+        transform: scale(1);
+
+      }
+
+      &.hide-start {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+// Main game styles
+#game-container {
+
+  .phrase {
+    width: 100%;
+    height: auto;
+    background: rgba(0, 0, 0, .4);
+    padding: 20px;
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    border: 3px dashed rgb(255, 255, 0);
+    
+
+    h2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    } 
+  }
+
+  .spinner-container {
+    margin: 40px 0;
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;;
+    align-items: center;
+
+    .spinner {
+      width: 400px;
+      height: 200px;
+      background: rgb(196, 196, 196);
+      border: 6px solid blue;
+      border-radius: 10px; 
+    }
+
+    .spin-btn {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      margin: 20px;
+      transform: scale(1);
+      @include transition
+
+      &.start-spin {
+        background: rgb(11, 26, 92);
+
+        &:hover {
+          transform: scale(1);
+          @include transition;
+          background: #ffd700;
+        }
+      }
+
+      &.stop-spin {
+        background: rgb(255, 0, 0);
+
+        &:hover {
+          transform: scale(1);
+          @include transition;
+          background: #ffd700;
+        }
+      }
+    }
+  }  
+  
+
+  .player-info {
+    font-size: 1.8rem;
+    color: silver;
+    text-shadow: 4px 4px 8px #000;
+
+    .players-name {
+
+      span {
+        color: rgb(255, 140, 159);
+      }
+    }
+
+    .earnings {
+
+      span {
+        color: #ffd700;
+      }
+    }
+  }
+} 
+

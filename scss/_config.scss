@@ -1,0 +1,13 @@
+$overlay-color: rgba(0, 0, 0, 1);
+$main-game-background: radial-gradient(rgb(94, 255, 94), rgb(0, 59, 0));
+
+$start-color: rgb(243, 208, 7);
+$start-font: 'Ubuntu', sans-serif;
+
+@mixin transition {
+  transition: all 400ms ease;
+}
+
+@mixin transition-slow {
+  transition: all 1s ease;
+}
