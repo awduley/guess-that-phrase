@@ -143,7 +143,6 @@ body {
 #game-container {
 
   .phrase {
-    width: 100%;
     height: auto;
     background: rgba(0, 0, 0, .4);
     padding: 20px;
@@ -162,53 +161,67 @@ body {
   }
 
   .spinner-container {
-    margin: 40px 0;
-    width: 80%;
+    display: block;
+    width: 90%;
     height: auto;
     display: flex;
-    justify-content: center;;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 20px;
+    margin: 40px auto;
+    width: 90%;
+    height: auto;
+    background: rgba(0, 0, 0, .4);
+    border: 3px dashed #00a86b;
+
 
     .spinner {
       width: 400px;
       height: 200px;
-      background: rgb(196, 196, 196);
-      border: 6px solid blue;
-      border-radius: 10px; 
+      background: rgb(255, 255, 255);
+      border: 6px solid rgb(72, 72, 124);
+      border-radius: 10px;  
+      text-align: center; 
+      font-size: 5rem;
+      line-height: 180px; 
     }
 
     .spin-btn {
-      width: 75px;
-      height: 75px;
+      width: 150px;
+      height: 150px;
+      background: linear-gradient((rgb(255, 20, 20), rgb(129, 0, 0)));
       border-radius: 50%;
-      margin: 20px;
-      transform: scale(1);
-      @include transition
+      margin-top: 20px;
+      @include transition;
+      position: relative;
+      //transform: translateX(200px);
 
-      &.start-spin {
-        background: rgb(11, 26, 92);
-
-        &:hover {
-          transform: scale(1);
-          @include transition;
-          background: #ffd700;
-        }
-      }
-
-      &.stop-spin {
-        background: rgb(255, 0, 0);
-
-        &:hover {
-          transform: scale(1);
-          @include transition;
-          background: #ffd700;
-        }
+      &::before {
+        content: 'Spin';
+        position: absolute;
+        text-align: center;
+        line-height: 124px;
+        font-size: 2.2rem;
+        width: 138px;
+        height: 138px;
+        background: linear-gradient(rgb(120, 120, 248), rgb(6, 6, 109));
+        border-radius: 50%;
+        top: 6px;
+        left: 6px;
+        @include transition;
       }
     }
-  }  
+  }
   
-
   .player-info {
+    display: block;
+    width: 90%;
+    padding: 20px;
+    margin: 40px auto;
+    height: auto;
+    background: rgba(0, 0, 0, .4);
+    border: 3px dashed #0047ab;
     font-size: 1.8rem;
     color: silver;
     text-shadow: 4px 4px 8px #000;

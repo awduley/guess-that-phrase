@@ -2,10 +2,15 @@ class GameAudio {
   constructor() {
     this.spin = new Audio();
     this.lose = new Audio();
+    this.spinBoops = new Audio();
   }
 
   spin() {
     this.spin.play();
+  }
+
+  spinBoops() {
+
   }
 
   lose() {
@@ -23,18 +28,6 @@ class GuessThatPhrase {
     if(randNum === 0) randNum = 25;
     
     return String(randNum);
-  }
-
-  spinPress() {
-
-  }
-
-  spin() {
-
-  }
-
-  earnings() {
-
   }
 
 }
@@ -59,7 +52,10 @@ function ready() {
   let playersName = document.querySelector('.players-name span');
   let randomNumber = document.querySelector('.random-number');
   let guessPhrase = document.querySelector('.phrase span');
-  let spinner = document.querySelectorAll('.spinner-container .spinner');
+  let spinner = document.querySelector('.spinner-container .spinner');
+  const startSpin = document.querySelector('.spin-btn');
+
+
 
   //Background colors
   const backgroundColor = 'radial-gradient(rgb(49, 199, 49), rgb(0, 59, 0))';
@@ -107,8 +103,50 @@ clickToPlay.addEventListener('click', () => {
   playerNameConfirm.classList.add('hide-start');
   guessPhrase.textContent = nameInput.value;
   playersName.textContent = nameInput.value;
-  document.body.style.background = backgroundColor;
+  //document.body.style.background = 'img/hangman.png';
 });
+
+
+// Event listener to generate a random amount between $25 and $1000 and put it in the DOM spinner element
+startSpin.addEventListener('click', () => {
+  
+  let slowDown = function() {
+    
+    let interval = 50;
+      let timer = function() {
+        interval *= 1.1;
+        let spinnerAmount = guessThatPhrase.spinner();
+        
+        if(spinnerAmount > 975) {
+          spinner.style.color = '#e5e4e2';
+          spinner.innerHTML = `$` + spinnerAmount;
+        } else if(spinnerAmount <= 975 && spinnerAmount > 725) {
+          spinner.style.color = '#d4af37';
+          spinner.innerHTML = `$` + spinnerAmount; 
+        } else if(spinnerAmount <= 725 && spinnerAmount > 475) {
+          spinner.style.color = '#c0c0c0';
+          spinner.innerHTML = `$` + spinnerAmount;
+        } else if(spinnerAmount <= 475 && spinnerAmount > 175) {
+          spinner.style.color = '#b87333';
+          spinner.innerHTML = `$` + spinnerAmount;
+        } else if(spinnerAmount <= 175 && spinnerAmount >= 0) {
+          spinner.style.color = '#000000';
+          spinner.innerHTML = `$` + spinnerAmount;
+        }
+  
+        if(interval <= 500) {
+          setTimeout(timer, interval);
+        }
+      }
+      timer();
+  }
+
+  slowDown();
+  
+
+});
+
+
 
   
 }

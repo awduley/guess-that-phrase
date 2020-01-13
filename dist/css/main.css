@@ -7,7 +7,7 @@ html {
   height: 100%; }
 
 body {
-  background: radial-gradient(#5eff5e, #003b00);
+  background: url("../../dist/img/background.png");
   overflow: hidden;
   height: 100%;
   font-family: 'Ubuntu', sans-serif; }
@@ -99,7 +99,6 @@ body {
       visibility: hidden; }
 
 #game-container .phrase {
-  width: 100%;
   height: auto;
   background: rgba(0, 0, 0, 0.4);
   padding: 20px;
@@ -114,39 +113,58 @@ body {
     color: #fff; }
 
 #game-container .spinner-container {
-  margin: 40px 0;
-  width: 80%;
+  display: block;
+  width: 90%;
   height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  padding: 20px;
+  margin: 40px auto;
+  width: 90%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.4);
+  border: 3px dashed #00a86b; }
   #game-container .spinner-container .spinner {
     width: 400px;
     height: 200px;
-    background: #c4c4c4;
-    border: 6px solid blue;
-    border-radius: 10px; }
+    background: white;
+    border: 6px solid #48487c;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 5rem;
+    line-height: 180px; }
   #game-container .spinner-container .spin-btn {
-    width: 75px;
-    height: 75px;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(#ff1414, #810000);
     border-radius: 50%;
-    margin: 20px;
-    transform: scale(1);
-    transition: all 400ms ease; }
-    #game-container .spinner-container .spin-btn.start-spin {
-      background: #0b1a5c; }
-      #game-container .spinner-container .spin-btn.start-spin:hover {
-        transform: scale(1);
-        transition: all 400ms ease;
-        background: #ffd700; }
-    #game-container .spinner-container .spin-btn.stop-spin {
-      background: red; }
-      #game-container .spinner-container .spin-btn.stop-spin:hover {
-        transform: scale(1);
-        transition: all 400ms ease;
-        background: #ffd700; }
+    margin-top: 20px;
+    transition: all 400ms ease;
+    position: relative; }
+    #game-container .spinner-container .spin-btn::before {
+      content: 'Spin';
+      position: absolute;
+      text-align: center;
+      line-height: 124px;
+      font-size: 2.2rem;
+      width: 138px;
+      height: 138px;
+      background: linear-gradient(#7878f8, #06066d);
+      border-radius: 50%;
+      top: 6px;
+      left: 6px;
+      transition: all 400ms ease; }
 
 #game-container .player-info {
+  display: block;
+  width: 90%;
+  padding: 20px;
+  margin: 40px auto;
+  height: auto;
+  background: rgba(0, 0, 0, 0.4);
+  border: 3px dashed #0047ab;
   font-size: 1.8rem;
   color: silver;
   text-shadow: 4px 4px 8px #000; }

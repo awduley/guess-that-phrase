@@ -1,5 +1,6 @@
 $overlay-color: rgba(0, 0, 0, 1);
-$main-game-background: radial-gradient(rgb(94, 255, 94), rgb(0, 59, 0));
+// $main-game-background: radial-gradient(rgb(94, 255, 94), rgb(0, 59, 0));
+$main-game-background: url('../../dist/img/background.png');
 
 $start-color: rgb(243, 208, 7);
 $start-font: 'Ubuntu', sans-serif;
